@@ -8,6 +8,10 @@ App mobile web para registrar refeições com emoções, sensações físicas e 
 - Vite
 - jsPDF
 
+## Deploy
+
+[Ver demonstração](https://luizgpa.github.io/diario_alimentar/)
+
 ## Instalação
 
 ```sh
