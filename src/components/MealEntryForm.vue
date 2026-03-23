@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { MealEntry } from '@/types/MealEntry'
 import { generateMealPdf, sharePdf } from '@/utils/generateMealPdf'
+
+const { t } = useI18n()
 
 const form = reactive<MealEntry>({
   day: '',
@@ -40,47 +43,49 @@ async function handleSubmit() {
 
 <template>
   <form class="meal-form" @submit.prevent="handleSubmit">
-    <h2>Diário Alimentar</h2>
+    <h2>{{ t('form.title') }}</h2>
 
     <div class="form-group">
-      <label for="day">Dia</label>
+      <label for="day">{{ t('form.fields.day') }}</label>
       <input id="day" v-model="form.day" type="date" required />
     </div>
 
     <div class="form-group">
-      <label for="mealName">Nome da refeição</label>
+      <label for="mealName">{{ t('form.fields.mealName') }}</label>
       <input id="mealName" v-model="form.mealName" type="text" required />
     </div>
 
     <div class="form-group">
-      <label for="time">Horário</label>
+      <label for="time">{{ t('form.fields.time') }}</label>
       <input id="time" v-model="form.time" type="time" lang="pt-BR" required />
     </div>
 
     <div class="form-group">
-      <label for="whatConsumed">O que comeu/bebeu</label>
+      <label for="whatConsumed">{{ t('form.fields.whatConsumed') }}</label>
       <textarea id="whatConsumed" v-model="form.whatConsumed" rows="2" required></textarea>
     </div>
 
     <div class="form-group">
-      <label for="whereWas">Onde estava</label>
+      <label for="whereWas">{{ t('form.fields.whereWas') }}</label>
       <input id="whereWas" v-model="form.whereWas" type="text" />
     </div>
 
     <div class="form-group">
-      <label for="withWho">Com quem</label>
+      <label for="withWho">{{ t('form.fields.withWho') }}</label>
       <input id="withWho" v-model="form.withWho" type="text" />
     </div>
 
     <div class="form-group">
       <label for="feelingBefore"
-        >O que sentiu antes de comer (emoções, pensamentos, sensações físicas)</label
+        >{{ t('form.fields.feelingBefore') }} ({{ t('form.fields.feelingBeforeHint') }})</label
       >
       <textarea id="feelingBefore" v-model="form.feelingBefore" rows="2"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="satietyLevelBefore">Nível de saciedade antes (0-10)</label>
+      <label for="satietyLevelBefore"
+        >{{ t('form.fields.satietyLevelBefore') }} {{ t('form.fields.satietyLevelRange') }}</label
+      >
       <div class="range-container">
         <input
           id="satietyLevelBefore"
@@ -94,17 +99,19 @@ async function handleSubmit() {
     </div>
 
     <div class="form-group">
-      <label for="feelingDuring">O que sentiu durante a refeição</label>
+      <label for="feelingDuring">{{ t('form.fields.feelingDuring') }}</label>
       <textarea id="feelingDuring" v-model="form.feelingDuring" rows="2"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="feelingAfter">O que sentiu depois de comer</label>
+      <label for="feelingAfter">{{ t('form.fields.feelingAfter') }}</label>
       <textarea id="feelingAfter" v-model="form.feelingAfter" rows="2"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="satietyLevelAfter">Nível de saciedade depois (0-10)</label>
+      <label for="satietyLevelAfter"
+        >{{ t('form.fields.satietyLevelAfter') }} {{ t('form.fields.satietyLevelRange') }}</label
+      >
       <div class="range-container">
         <input
           id="satietyLevelAfter"
@@ -118,16 +125,16 @@ async function handleSubmit() {
     </div>
 
     <div class="form-group">
-      <label for="notes">Anotações</label>
+      <label for="notes">{{ t('form.fields.notes') }}</label>
       <textarea id="notes" v-model="form.notes" rows="3"></textarea>
     </div>
 
-    <button type="submit">Gerar PDF</button>
+    <button type="submit">{{ t('form.submit') }}</button>
 
     <p class="github-link">
-      <a href="https://github.com/luizgpa/diario_alimentar" target="_blank" rel="noopener"
-        >Ver no GitHub</a
-      >
+      <a href="https://github.com/luizgpa/diario_alimentar" target="_blank" rel="noopener">{{
+        t('form.githubLink')
+      }}</a>
     </p>
   </form>
 </template>

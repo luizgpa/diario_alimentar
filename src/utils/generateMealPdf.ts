@@ -1,5 +1,8 @@
 import { jsPDF } from 'jspdf'
+import { i18n } from '@/i18n'
 import type { MealEntry } from '@/types/MealEntry'
+
+const t = i18n.global.t.bind(i18n.global)
 
 export function generateMealPdf(entry: MealEntry): jsPDF {
   const doc = new jsPDF()
@@ -31,7 +34,7 @@ export function generateMealPdf(entry: MealEntry): jsPDF {
 
   doc.setFontSize(16)
   doc.setFont('helvetica', 'bold')
-  doc.text('Diário Alimentar', margin, y)
+  doc.text(t('pdf.title'), margin, y)
   y += lineHeight
   addDateTime(formatDate(entry.day), entry.time, entry.mealName)
 
@@ -39,15 +42,15 @@ export function generateMealPdf(entry: MealEntry): jsPDF {
   doc.line(margin, y, pageWidth - margin, y)
   y += lineHeight
 
-  addLabel('O que comeu/bebeu', entry.whatConsumed || '-')
-  addLabel('Onde estava', entry.whereWas || '-')
-  addLabel('Com quem', entry.withWho || '-')
-  addLabel('O que sentiu antes', entry.feelingBefore || '-')
-  addLabel('Nível de saciedade antes', `${entry.satietyLevelBefore}/10`)
-  addLabel('O que sentiu durante', entry.feelingDuring || '-')
-  addLabel('O que sentiu depois', entry.feelingAfter || '-')
-  addLabel('Nível de saciedade depois', `${entry.satietyLevelAfter}/10`)
-  addLabel('Anotações', entry.notes || '-')
+  addLabel(t('form.fields.whatConsumed'), entry.whatConsumed || '-')
+  addLabel(t('form.fields.whereWas'), entry.whereWas || '-')
+  addLabel(t('form.fields.withWho'), entry.withWho || '-')
+  addLabel(t('form.fields.feelingBefore'), entry.feelingBefore || '-')
+  addLabel(t('form.fields.satietyLevelBefore'), `${entry.satietyLevelBefore}/10`)
+  addLabel(t('form.fields.feelingDuring'), entry.feelingDuring || '-')
+  addLabel(t('form.fields.feelingAfter'), entry.feelingAfter || '-')
+  addLabel(t('form.fields.satietyLevelAfter'), `${entry.satietyLevelAfter}/10`)
+  addLabel(t('form.fields.notes'), entry.notes || '-')
 
   return doc
 }
@@ -79,5 +82,5 @@ export async function sharePdf(doc: jsPDF, entry: MealEntry): Promise<boolean> {
 function getFileName(day: string, time: string): string {
   const datePart = day.replace(/-/g, '')
   const timePart = time.replace(':', '')
-  return `diario-alimentar-${datePart}-${timePart}.pdf`
+  return `${t('pdf.filenamePrefix')}-${datePart}-${timePart}.pdf`
 }

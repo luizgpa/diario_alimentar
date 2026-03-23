@@ -1,0 +1,27 @@
+{
+  "form": {
+    "title": "Diário Alimentar",
+    "fields": {
+      "day": "Dia",
+      "mealName": "Nome da refeição",
+      "time": "Horário",
+      "whatConsumed": "O que comeu/bebeu",
+      "whereWas": "Onde estava",
+      "withWho": "Com quem",
+      "feelingBefore": "O que sentiu antes",
+      "feelingBeforeHint": "emoções, pensamentos, sensações físicas",
+      "satietyLevelBefore": "Nível de saciedade antes",
+      "satietyLevelRange": "(0-10)",
+      "feelingDuring": "O que sentiu durante",
+      "feelingAfter": "O que sentiu depois",
+      "satietyLevelAfter": "Nível de saciedade depois",
+      "notes": "Anotações"
+    },
+    "submit": "Gerar PDF",
+    "githubLink": "Ver no GitHub"
+  },
+  "pdf": {
+    "title": "Diário Alimentar",
+    "filenamePrefix": "diario-alimentar"
+  }
+}

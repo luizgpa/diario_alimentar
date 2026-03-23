@@ -1,0 +1,27 @@
+{
+  "form": {
+    "title": "Food Diary",
+    "fields": {
+      "day": "Day",
+      "mealName": "Meal name",
+      "time": "Time",
+      "whatConsumed": "What you ate/drank",
+      "whereWas": "Where you were",
+      "withWho": "With whom",
+      "feelingBefore": "What you felt before",
+      "feelingBeforeHint": "emotions, thoughts, physical sensations",
+      "satietyLevelBefore": "Satiety level before",
+      "satietyLevelRange": "(0-10)",
+      "feelingDuring": "What you felt during",
+      "feelingAfter": "What you felt after",
+      "satietyLevelAfter": "Satiety level after",
+      "notes": "Notes"
+    },
+    "submit": "Generate PDF",
+    "githubLink": "View on GitHub"
+  },
+  "pdf": {
+    "title": "Food Diary",
+    "filenamePrefix": "food-diary"
+  }
+}
