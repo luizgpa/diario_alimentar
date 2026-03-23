@@ -1,0 +1,17 @@
+{
+  "name": "Diário Alimentar",
+  "short_name": "Diário Alimentar",
+  "description": "App para registrar refeições e sensações",
+  "start_url": "/diario_alimentar/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4caf50",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
