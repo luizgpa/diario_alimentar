@@ -54,7 +54,7 @@ async function handleSubmit() {
 
     <div class="form-group">
       <label for="time">Horário</label>
-      <input id="time" v-model="form.time" type="time" required />
+      <input id="time" v-model="form.time" type="time" lang="pt-BR" required />
     </div>
 
     <div class="form-group">
