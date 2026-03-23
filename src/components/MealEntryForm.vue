@@ -173,6 +173,7 @@ textarea {
 
 input[type='range'] {
   flex: 1;
+  accent-color: #4caf50;
 }
 
 .range-value {
