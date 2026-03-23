@@ -128,6 +128,7 @@ async function handleSubmit() {
 
 <style scoped>
 .meal-form {
+  box-sizing: border-box;
   max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
@@ -153,6 +154,7 @@ input[type='text'],
 input[type='date'],
 input[type='time'],
 textarea {
+  box-sizing: border-box;
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
