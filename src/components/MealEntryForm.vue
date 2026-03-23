@@ -123,6 +123,12 @@ async function handleSubmit() {
     </div>
 
     <button type="submit">Gerar PDF</button>
+
+    <p class="github-link">
+      <a href="https://github.com/luizgpa/diario_alimentar" target="_blank" rel="noopener"
+        >Ver no GitHub</a
+      >
+    </p>
   </form>
 </template>
 
@@ -198,5 +204,19 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.github-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.github-link a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.github-link a:hover {
+  text-decoration: underline;
 }
 </style>
